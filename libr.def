@@ -1,0 +1,7 @@
+Bootstrap: docker
+From: rocker/tidyverse:4.3
+
+%post
+    apt -y update
+    apt -y install jags
+    R -e "install.packages(c('coda','rjags','runjags','mcmcplots','loo'), dependencies=TRUE, repos='http://cran.rstudio.com/')" 

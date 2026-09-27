@@ -1,0 +1,17 @@
++SingularityImage = "osdf:///ospool/ap40/data/yizhou.fei/libr.sif"
+executable        = Simulation_mixnewJM11.R
+arguments = mixJM.X_newdata7.$(Process).csv mixJM.Y_newdata7.$(Process).csv mixJM.rec_newdata7.$(Process).csv long.data_new600.csv
+transfer_input_files = mixJM.X_newdata7.$(Process).csv, mixJM.Y_newdata7.$(Process).csv, mixJM.rec_newdata7.$(Process).csv, long.data_new600.csv
+transfer_output_files = mixJM.newresult11.$(Process).csv, dicwaic_mixJM11.$(Process).csv, mixJM.classification_summary11.$(Process).csv
+
+log    = R.log.$(Cluster).$(Process)
+error  = R.err.$(Cluster).$(Process)
+output = R.out.$(Cluster).$(Process)
+
++JobDurationCategory = "Long"
+
+request_cpus   = 4
+request_memory = 12GB
+request_disk   = 12GB
+
+queue 500
